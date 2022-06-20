@@ -9,7 +9,8 @@
 
 enum COVCamPreset {
 	M5StackCameraX      = 0,
-	M5StackTimerCameraX = 1
+	M5StackTimerCameraX = 1,
+	ESP32CAM            = 2
 };
 
 

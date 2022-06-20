@@ -48,6 +48,10 @@ bool COVCam::init(COVCamPreset camera, framesize_t resolution, uint8_t jpegQuali
 		memcpy(&cameraConfig, &M5StackTimerCameraXConfig, sizeof(M5StackTimerCameraXConfig));
 		Serial.println("M5Stack Timer CameraX selected.");
 	}
+	else if (ESP32CAM == camera) {
+		memcpy(&cameraConfig, &ESP32CAMConfig, sizeof(ESP32CAMConfig));
+		Serial.println("ESP32-CAM selected.");
+	}
 	else {
 		m_lastError = ESP_FAIL;
 		return false;
