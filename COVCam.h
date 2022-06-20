@@ -47,7 +47,8 @@ public:
 
 	bool init(COVCamPreset camera,
 		framesize_t resolution = FRAMESIZE_QVGA,
-		uint8_t jpegQuality = 6);
+		uint8_t jpegQuality = 6,
+		uint8_t frameBuffers = 1);
 
 	uint8_t* getFrameBuffer();
 	uint8_t* capture();

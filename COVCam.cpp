@@ -35,7 +35,7 @@ bool COVCam::init(camera_config_t cameraConfig) {
 	return true;
 }
 
-bool COVCam::init(COVCamPreset camera, framesize_t resolution, uint8_t jpegQuality) {
+bool COVCam::init(COVCamPreset camera, framesize_t resolution, uint8_t jpegQuality, uint8_t frameBuffers) {
 	camera_config_t cameraConfig;
 
 	memset(&cameraConfig, 0, sizeof(cameraConfig));
@@ -56,7 +56,7 @@ bool COVCam::init(COVCamPreset camera, framesize_t resolution, uint8_t jpegQuali
 	cameraConfig.frame_size = resolution;
 	cameraConfig.pixel_format = PIXFORMAT_JPEG;
 	cameraConfig.jpeg_quality = jpegQuality;
-	cameraConfig.fb_count = 3;
+	cameraConfig.fb_count = frameBuffers;
 	cameraConfig.xclk_freq_hz = 20000000;
 	return init(cameraConfig);
 }
