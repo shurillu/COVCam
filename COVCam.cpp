@@ -44,6 +44,10 @@ bool COVCam::init(COVCamPreset camera, framesize_t resolution, uint8_t jpegQuali
 		memcpy(&cameraConfig, &M5StackCameraXConfig, sizeof(M5StackCameraXConfig));
 		Serial.println("M5Stack CameraX selected.");
 	}
+	else if (M5StackCameraModelA == camera) {
+		memcpy(&cameraConfig, &M5StackCameraModelAConfig, sizeof(M5StackCameraModelAConfig));
+		Serial.println("M5Stack Camera (model A) selected.");
+	}
 	else if (M5StackTimerCameraX == camera) {
 		memcpy(&cameraConfig, &M5StackTimerCameraXConfig, sizeof(M5StackTimerCameraXConfig));
 		Serial.println("M5Stack Timer CameraX selected.");
